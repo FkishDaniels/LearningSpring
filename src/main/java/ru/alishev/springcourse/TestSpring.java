@@ -1,17 +1,13 @@
 package ru.alishev.springcourse;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Music music = context.getBean("rockBean",RockMusic.class);
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-        musicPlayer.playMusic();
-
-        Music music2 = context.getBean("classicBean",ClassicalMusic.class);
-        MusicPlayer classicalMusicPlayer = new MusicPlayer(music2);
-        classicalMusicPlayer.playMusic();
+        Computer computer = context.getBean("Computer",Computer.class);
+        System.out.println(computer.toString());
         context.close();
     }
 }

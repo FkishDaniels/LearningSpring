@@ -1,46 +1,18 @@
 package ru.alishev.springcourse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("Player")
 public class MusicPlayer {
-    private Music music;
-    private int volume;
-    private String name;
+    @Autowired
+    private ClassicalMusic classicalMusic;
+    @Autowired
+    private RockMusic rockMusic;
 
-    public void setMusic(Music music) {
-        this.music = music;
+    public String playMusic(){
+        return "Playing" + classicalMusic.getSong()+" rock: "+rockMusic.getSong();
     }
 
-    //IoC
-    public MusicPlayer(Music music){
-        this.music = music;
-    }
-    public MusicPlayer(){}
 
-    public void playMusic(){
-        System.out.println("Playing: "+music.getSong());
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "MusicPlayer{" +
-                "music=" + music +
-                ", volume=" + volume +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
