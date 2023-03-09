@@ -1,10 +1,26 @@
 package ru.alishev.springcourse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-@Component
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component("RockMusic")
 public class RockMusic implements Music{
+    private List<String> rockMusics = new ArrayList<>();
+    @Autowired
+    public RockMusic(){
+        rockMusics.add("Rock1");
+        rockMusics.add("Rock2");
+        rockMusics.add("Rock3");
+    }
     @Override
     public String getSong() {
-        return "Wind cries Marry";
+        String str = "";
+        for(int i = 0;i<rockMusics.size();i++){
+            str = str +" "+ rockMusics.get(i);
+        }
+        return str;
     }
 }
