@@ -6,10 +6,9 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("RockMusic")
 public class RockMusic implements Music{
     private List<String> rockMusics = new ArrayList<>();
-    @Autowired
+
     public RockMusic(){
         rockMusics.add("Rock1");
         rockMusics.add("Rock2");

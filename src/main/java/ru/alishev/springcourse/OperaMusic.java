@@ -1,19 +1,15 @@
 package ru.alishev.springcourse;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassicalMusic implements Music{
+public class OperaMusic implements Music{
     private List<String> classicList = new ArrayList<>();
 
-    public ClassicalMusic(){
-        classicList.add("Class1");
-        classicList.add("Class2");
-        classicList.add("Class3");
+    public OperaMusic(){
+        classicList.add("Opera1");
+        classicList.add("Opera2");
+        classicList.add("Opera3");
     }
 
 
